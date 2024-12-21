@@ -21,6 +21,7 @@ Feature: Login Funtionality
         When user input email: <email>
         And user provide password: <password>
         And user click login
+        Then system display dashboard menu
 
             Examples:
                 | email               | password         |

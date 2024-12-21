@@ -19,6 +19,12 @@ class LoginPage {
     }
 
     // Action Method
+    async login () {
+        await wdioAction.enterText(this.emailField, 'halo@test.com');
+        await wdioAction.enterText(this.passwordField, 'secret_password');
+        await wdioAction.clickOn(this.loginButton);
+    }
+
     async inputEmail (email) {
         if (email == 'empty_email') {
             email = ''
