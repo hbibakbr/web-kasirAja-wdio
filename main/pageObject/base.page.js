@@ -1,9 +1,17 @@
-const wdioAction = require('../utilities/wdio-helpers.js');
+const wdioAction = require('../utilities/wdio-helper.js');
 
 class BasePage {
+    get registerButton () {
+        return 'a[href="/register"]';
+    }
+
     // Method
-    async navigateToPage(url) {
+    async navigateToPage (url) {
         await wdioAction.navigateToUrl(url);
+    }
+
+    async clickOnRegisterButton () {
+        await wdioAction.clickOn(this.registerButton);
     }
 }
 

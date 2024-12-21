@@ -42,6 +42,20 @@ class WdioHelper {
     }
 
     /**
+     * Helper function to wait for element alert
+     * @param {string} selector - CSS or XPath selector for the element
+     */
+    async waitforAlert(selector) {
+        await browser.waitUntil(
+            async () => (await $(selector).isDisplayed()),
+            {
+                timeout: 5000, // Ubah sesuai kebutuhan Anda
+                timeoutMsg: 'Alert pop-up tidak muncul dalam waktu yang ditentukan',
+            }
+        );
+    }
+
+    /**
      * Helper function to set value for an input field
      * @param {string} selector - CSS or XPath selector for the input field
      * @param {string} value - Value to set in the input field
